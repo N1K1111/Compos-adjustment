@@ -1,0 +1,31 @@
+version: '3.4'
+
+networks:
+  consoleapp:
+    driver: bridge
+
+services:
+  npgsql:
+    container_name: post_comp
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_PASSWORD=root"
+      - "POSTGRES_USER=admin"
+      - "POSTGRES_DB=pgdb"
+    networks:
+      - consoleapp
+  consoleapp1:
+    image: ${DOCKER_REGISTRY-}consoleapp1
+    build:
+      context: .
+      dockerfile: ConsoleApp1/Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - consoleapp
+    depends_on: 
+      - npgsql
+
+  
