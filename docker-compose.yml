@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.9'
 
 networks:
   consoleapp:
@@ -16,6 +16,8 @@ services:
       - "POSTGRES_DB=pgdb"
     networks:
       - consoleapp
+    volumes:
+      - C:\data_pg:/var/lib/postgresql/data
   consoleapp1:
     image: ${DOCKER_REGISTRY-}consoleapp1
     build:
@@ -27,5 +29,6 @@ services:
       - consoleapp
     depends_on: 
       - npgsql
+
 
   

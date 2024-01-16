@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace ConsoleApp1
 {
@@ -6,6 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
             using (AppContext appContext = new AppContext())
             {
                 User user = new User { FirstName = "Nikita", LastName = "Glazkov", Age = 30 };
