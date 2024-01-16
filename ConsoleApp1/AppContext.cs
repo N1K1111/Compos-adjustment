@@ -12,7 +12,10 @@ namespace ConsoleApp1
         public DbSet<User> Users { get; set; }
 
 
-        public AppContext() { }
+        public AppContext() 
+        {
+            Database.Migrate();
+        }
         /*
         public AppContext()
         {
