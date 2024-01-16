@@ -11,6 +11,8 @@ namespace ConsoleApp1
     {
         public DbSet<User> Users { get; set; }
 
+
+        public AppContext() { }
         /*
         public AppContext()
         {
@@ -20,7 +22,7 @@ namespace ConsoleApp1
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=pgdb; POSTGRES_USER=postgres; POSTGRES_PASSWORD=123123;");
+            optionsBuilder.UseNpgsql("Host=npgsql; Port=5432; Database=pgdb; Username=postgres; Password=123123;");
         }
 
 

@@ -8,7 +8,7 @@ namespace ConsoleApp1
         {
             using (AppContext appContext = new AppContext())
             {
-                User user = new User { FirstName = "ник", LastName = "маккен", Age = 20 };
+                User user = new User { FirstName = "Nikita", LastName = "Glazkov", Age = 30 };
                 appContext.Users.Add(user);
                 appContext.SaveChanges();
             }
@@ -22,11 +22,6 @@ namespace ConsoleApp1
                     Console.WriteLine($"{us.LastName} {us.FirstName} {us.Age}");
                 }
             }
-
-            
-
         }
-
-
     }
 }
